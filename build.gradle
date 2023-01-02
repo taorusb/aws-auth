@@ -19,25 +19,22 @@ repositories {
 }
 
 dependencies {
+    implementation 'io.r2dbc:r2dbc-postgresql:0.8.13.RELEASE'
+    implementation 'org.springframework.data:spring-data-r2dbc:3.0.0'
+    implementation 'org.springframework.boot:spring-boot-starter-webflux:3.0.1'
+    implementation 'org.springframework.boot:spring-boot-starter-reactor-netty:3.0.1'
     implementation 'software.amazon.awssdk:cognitoidentityprovider:2.18.35'
     implementation 'software.amazon.awssdk:cognitoidentity:2.18.31'
     implementation 'org.springframework.boot:spring-boot-starter-security:3.0.1'
     implementation 'org.springframework.security:spring-security-oauth2-client:6.0.1'
     implementation 'org.springframework.security:spring-security-oauth2-jose:6.0.1'
-//    implementation 'org.flywaydb:flyway-maven-plugin:5.2.4'
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa:3.0.1'
     implementation 'org.postgresql:postgresql:42.4.0'
-    implementation 'org.springframework.boot:spring-boot-starter-web'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
-//    testImplementation 'com.h2database:h2:2.1.214'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test:6.0.1'
-//    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.1'
     testImplementation 'org.testcontainers:postgresql:1.17.6'
     testImplementation "org.testcontainers:junit-jupiter:1.17.6"
-    testImplementation 'org.flywaydb:flyway-maven-plugin:5.2.4'
-
 }
 
 tasks.named('test') {

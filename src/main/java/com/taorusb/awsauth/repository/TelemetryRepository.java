@@ -1,15 +1,12 @@
 package com.taorusb.awsauth.repository;
 
-import com.taorusb.awsauth.domain.Agent;
 import com.taorusb.awsauth.domain.Telemetry;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 import org.springframework.stereotype.Repository;
-
-
-import java.util.List;
+import reactor.core.publisher.Flux;
 
 @Repository
-public interface TelemetryRepository extends JpaRepository<Telemetry, Long> {
+public interface TelemetryRepository extends ReactiveCrudRepository<Telemetry, Long> {
 
-	List<Telemetry> getTelemetriesByAgent(Agent agent);
+	Flux<Telemetry> findAllByAgentId(String agentId);
 }
